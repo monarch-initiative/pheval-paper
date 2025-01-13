@@ -1,0 +1,34 @@
+benchmark_name: structural_variant_benchmark
+runs:
+  - run_identifier: Exomiser
+    results_dir: results/exomiser-14.0.2-2406/structural_variants
+    phenopacket_dir: corpora/structural_variants/phenopackets
+    gene_analysis: False
+    variant_analysis: True
+    disease_analysis: False
+    threshold:
+    score_order: descending
+  - run_identifier: SvAnna
+    results_dir: results/svanna-1.0.4/structural_variants
+    phenopacket_dir: corpora/structural_variants/phenopackets
+    gene_analysis: False
+    variant_analysis: True
+    disease_analysis: False
+    threshold:
+    score_order: descending
+plot_customisation:
+  gene_plots:
+    plot_type: bar_cumulative
+    rank_plot_title:
+    roc_curve_title:
+    precision_recall_title:
+  disease_plots:
+    plot_type: bar_cumulative
+    rank_plot_title:
+    roc_curve_title:
+    precision_recall_title:
+  variant_plots:
+    plot_type: bar_cumulative
+    rank_plot_title:
+    roc_curve_title:
+    precision_recall_title:

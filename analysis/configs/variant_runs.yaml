@@ -1,0 +1,42 @@
+benchmark_name: variant_benchmark
+runs:
+  - run_identifier: Exomiser
+    results_dir: results/exomiser-14.0.2-2406/phenopacket_store_0.1.11_variants
+    phenopacket_dir: corpora/phenopacket_store_0.1.11_variants/phenopackets
+    gene_analysis: True
+    variant_analysis: False
+    disease_analysis: False
+    threshold:
+    score_order: descending
+  - run_identifier: LIRICAL
+    results_dir: results/lirical-2.0.2-2309/phenopacket_store_0.1.11_variants
+    phenopacket_dir: corpora/phenopacket_store_0.1.11_variants/phenopackets
+    gene_analysis: True
+    variant_analysis: False
+    disease_analysis: False
+    threshold:
+    score_order: descending
+  - run_identifier: AI-MARRVEL
+    results_dir: results/ai_marrvel-0.1.0/phenopacket_store_0.1.11_variants
+    phenopacket_dir: corpora/phenopacket_store_0.1.11_variants/phenopackets
+    gene_analysis: True
+    variant_analysis: False
+    disease_analysis: False
+    threshold:
+    score_order: descending
+plot_customisation:
+  gene_plots:
+    plot_type: bar_cumulative
+    rank_plot_title:
+    roc_curve_title:
+    precision_recall_title:
+  disease_plots:
+    plot_type: bar_cumulative
+    rank_plot_title:
+    roc_curve_title:
+    precision_recall_title:
+  variant_plots:
+    plot_type: bar_cumulative
+    rank_plot_title:
+    roc_curve_title:
+    precision_recall_title:

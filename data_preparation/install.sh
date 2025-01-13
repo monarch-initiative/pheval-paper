@@ -4,6 +4,12 @@ CWD=$(pwd)
 
 pip install pheval
 
+wget https://zenodo.org/records/14639917/files/pheval-paper.tar.gz?download=1
+
+tar -zxf pheval-paper
+
+mv pheval-paper/corpora .
+
 wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/latest/GRCh37/HG001_GRCh37_1_22_v4.2.1_benchmark.vcf.gz
 
 wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/latest/GRCh38/HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz

@@ -1,0 +1,14 @@
+tool: LIRICAL
+tool_version: 2.0.2
+variant_analysis: True
+gene_analysis: True
+disease_analysis: True
+tool_specific_configuration_options:
+  mode: phenopacket
+  lirical_jar_executable: lirical-cli-2.0.2/lirical-cli-2.0.2.jar
+  exomiser_db_configurations:
+    exomiser_database:
+    exomiser_hg19_database: 2309_hg19_variants.mv.db
+    exomiser_hg38_database: 2309_hg38_variants.mv.db
+  post_process:
+    sort_order: descending

@@ -1,4 +1,4 @@
-bash data_preparation/data_preparation.sh
+bash data_preparation/install.sh
 
 bash runner/run.sh
 

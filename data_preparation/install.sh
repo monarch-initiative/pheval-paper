@@ -4,9 +4,9 @@ CWD=$(pwd)
 
 pip install pheval
 
-wget https://zenodo.org/records/14639917/files/pheval-paper.tar.gz?download=1
+#wget https://zenodo.org/records/14639917/files/pheval-paper.tar.gz?download=1
 
-tar -zxf pheval-paper
+tar -zxf pheval-paper.tar.gz
 
 mv pheval-paper/corpora .
 

@@ -2,47 +2,47 @@ CWD=$(pwd)
 
 # Install corpora
 
-#pip install pheval
-#
-##wget https://zenodo.org/records/14639917/files/pheval-paper.tar.gz?download=1
-#
-#tar -zxf pheval-paper.tar.gz
-#
-#mv pheval-paper/corpora .
-#
-#wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/latest/GRCh37/HG001_GRCh37_1_22_v4.2.1_benchmark.vcf.gz
-#
-#wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/latest/GRCh38/HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz
-#
-#wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/analysis/PacBio_pbsv_05212019/HG002_GRCh38.pbsv.vcf.gz
-#
-#pheval-utils prepare-corpus --phenopacket-dir "${CWD}"/corpora/phenopacket_store_0.1.11_variants/phenopackets --hg19-template-vcf HG001_GRCh37_1_22_v4.2.1_benchmark.vcf.gz --hg38-template-vcf HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz --output-dir "${CWD}"/corpora/phenopacket_store_0.1.11_variants
-#
-#pheval-utils prepare-corpus --phenopacket-dir "${CWD}"/corpora/structural_variants/phenopackets --hg38-template-vcf HG002_GRCh38.pbsv.vcf.gz --output-dir "${CWD}"/corpora/structural_variants
-#
-#rm HG001_GRCh37_1_22_v4.2.1_benchmark.vcf.gz
-#
-#rm HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz
-#
-#rm HG002_GRCh38.pbsv.vcf.gz
+pip install pheval
+
+wget https://zenodo.org/records/14639917/files/pheval-paper.tar.gz?download=1
+
+tar -zxf pheval-paper.tar.gz
+
+mv pheval-paper/corpora .
+
+wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/latest/GRCh37/HG001_GRCh37_1_22_v4.2.1_benchmark.vcf.gz
+
+wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/latest/GRCh38/HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz
+
+wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/analysis/PacBio_pbsv_05212019/HG002_GRCh38.pbsv.vcf.gz
+
+pheval-utils prepare-corpus --phenopacket-dir "${CWD}"/corpora/phenopacket_store_0.1.11_variants/phenopackets --hg19-template-vcf HG001_GRCh37_1_22_v4.2.1_benchmark.vcf.gz --hg38-template-vcf HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz --output-dir "${CWD}"/corpora/phenopacket_store_0.1.11_variants
+
+pheval-utils prepare-corpus --phenopacket-dir "${CWD}"/corpora/structural_variants/phenopackets --hg38-template-vcf HG002_GRCh38.pbsv.vcf.gz --output-dir "${CWD}"/corpora/structural_variants
+
+rm HG001_GRCh37_1_22_v4.2.1_benchmark.vcf.gz
+
+rm HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz
+
+rm HG002_GRCh38.pbsv.vcf.gz
 
 # Install and set up Exomiser configurations
 
 mkdir -p configurations/exomiser-14.0.2/2406/variants
 
 wget -P configurations/exomiser-14.0.2/2406/variants https://github.com/exomiser/Exomiser/releases/download/14.0.2/exomiser-cli-14.0.2-distribution.zip
-#wget -P configurations/exomiser-14.0.2/2406/variants https://g-879a9f.f5dc97.75bc.dn.glob.us/data/2406_phenotype.zip
-#wget -P configurations/exomiser-14.0.2/2406/variants https://g-879a9f.f5dc97.75bc.dn.glob.us/data/2406_hg19.zip
-#wget -P configurations/exomiser-14.0.2/2406/variants https://g-879a9f.f5dc97.75bc.dn.glob.us/data/2406_hg38.zip
+wget -P configurations/exomiser-14.0.2/2406/variants https://g-879a9f.f5dc97.75bc.dn.glob.us/data/2406_phenotype.zip
+wget -P configurations/exomiser-14.0.2/2406/variants https://g-879a9f.f5dc97.75bc.dn.glob.us/data/2406_hg19.zip
+wget -P configurations/exomiser-14.0.2/2406/variants https://g-879a9f.f5dc97.75bc.dn.glob.us/data/2406_hg38.zip
 
-#unzip configurations/exomiser-14.0.2/2406/variants/2406_phenotype.zip -d configurations/exomiser-14.0.2/2406/variants
-#rm configurations/exomiser-14.0.2/2406/variants/2406_phenotype.zip
-#
-#unzip configurations/exomiser-14.0.2/2406/variants/2406_hg19.zip -d configurations/exomiser-14.0.2/2406/variants
-#rm configurations/exomiser-14.0.2/2406/variants/2406_hg19.zip
-#
-#unzip configurations/exomiser-14.0.2/2406/variants/2406_hg38.zip -d configurations/exomiser-14.0.2/2406/variants
-#rm configurations/exomiser-14.0.2/2406/variants/2406_hg38.zip
+unzip configurations/exomiser-14.0.2/2406/variants/2406_phenotype.zip -d configurations/exomiser-14.0.2/2406/variants
+rm configurations/exomiser-14.0.2/2406/variants/2406_phenotype.zip
+
+unzip configurations/exomiser-14.0.2/2406/variants/2406_hg19.zip -d configurations/exomiser-14.0.2/2406/variants
+rm configurations/exomiser-14.0.2/2406/variants/2406_hg19.zip
+
+unzip configurations/exomiser-14.0.2/2406/variants/2406_hg38.zip -d configurations/exomiser-14.0.2/2406/variants
+rm configurations/exomiser-14.0.2/2406/variants/2406_hg38.zip
 
 unzip configurations/exomiser-14.0.2/2406/variants/exomiser-cli-14.0.2-distribution.zip -d configurations/exomiser-14.0.2/2406/variants
 rm configurations/exomiser-14.0.2/2406/variants/exomiser-cli-14.0.2-distribution.zip
@@ -55,9 +55,9 @@ cp data_preparation/configs/exomiser-variant-config.yaml configurations/exomiser
 mkdir -p configurations/exomiser-14.0.2/2406/phenotype
 
 cp -r configurations/exomiser-14.0.2/2406/variants/exomiser-cli-14.0.2 configurations/exomiser-14.0.2/2406/phenotype
-#ln -s configurations/exomiser-14.0.2/2406/variants/2406_phenotype configurations/exomiser-14.0.2/2406/phenotype
-#ln -s configurations/exomiser-14.0.2/2406/variants/2406_hg19 configurations/exomiser-14.0.2/2406/phenotype
-#ln -s configurations/exomiser-14.0.2/2406/variants/2406_hg38 configurations/exomiser-14.0.2/2406/phenotype
+ln -s configurations/exomiser-14.0.2/2406/variants/2406_phenotype configurations/exomiser-14.0.2/2406/phenotype
+ln -s configurations/exomiser-14.0.2/2406/variants/2406_hg19 configurations/exomiser-14.0.2/2406/phenotype
+ln -s configurations/exomiser-14.0.2/2406/variants/2406_hg38 configurations/exomiser-14.0.2/2406/phenotype
 cp configurations/exomiser-14.0.2/2406/variants/preset-exome-analysis.yaml configurations/exomiser-14.0.2/2406/phenotype
 
 cp data_preparation/configs/exomiser-phenotype-config.yaml configurations/exomiser-14.0.2/2406/phenotype/config.yaml

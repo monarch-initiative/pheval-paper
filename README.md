@@ -28,3 +28,17 @@ This executes the following experiments:
 | **Phenotype + Structural Variant Analysis** | Structural variant corpus | Exomiser  | 14.0.2 & 2406 db release     |
 |                                  |                          | SvAnna           | 1.0.4                        |
 
+## System and Storage Requirements
+
+Before running the pipeline, please ensure your system meets the following requirements:
+
+### Disk Space
+- The pipeline downloads and processes configurations during the data preparation phase that require approximately **785 GB** of disk space.
+- The size of the complete corpora, including VCF files and phenopackets for 3 sets of corpora, is approximately **423 GB**.
+- Ensure you have sufficient free space on your system to avoid running out of storage during execution.
+
+### CPU and Memory
+- Some tools in the pipeline require a **minimum of 4 CPU cores** and **50 GB of RAM** to run successfully.
+
+> **Note:** 
+> Due to the computational demands of these experiments, they were run on a **High-Performance Computing (HPC)** system. Where possible, we strongly recommend using an HPC environment to ensure sufficient resources for complete execution. Running this pipeline on local machines with limited resources is not advised, as it may result in insufficient storage, memory, or prolonged runtimes.

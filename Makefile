@@ -32,10 +32,8 @@ all:
 	@echo "This is a warning - do not run this unless you have weeks to wait: 'make install-corpora install-tools run benchmark'"
 
 # Virtual environment setup
-$(VENV_NAME)/bin/activate:
+venv:
 	python3 -m venv $(VENV_NAME)
-
-venv: $(VENV_NAME)/bin/activate
 
 install-corpora: download-pheval-paper-corpora install-pheval-paper-corpora
 

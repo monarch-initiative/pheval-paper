@@ -98,7 +98,7 @@ rm -r configurations/lirical-2.0.2/2309/2309_hg38
 
 cp data_preparation/configs/lirical-config.yaml configurations/lirical-2.0.2/2309/config.yaml
 
- Install and set up GADO configurations
+# Install and set up GADO configurations
 
 mkdir -p configurations/gado-1.0.4
 
@@ -108,7 +108,7 @@ tar -zxf configurations/gado-1.0.4/GadoCommandline-1.0.4.tar.gz -C configuration
 
 wget -P configurations/gado-1.0.4 https://molgenis26.gcc.rug.nl/downloads/genenetwork/v2.1/genenetwork_bonf_spiked.zip
 
-unzip -d configurations/gado-1.0.4/genenetwork_bonf_spiked.zip configurations/gado-1.0.4
+unzip configurations/gado-1.0.4/genenetwork_bonf_spiked.zip -d configurations/gado-1.0.4
 
 wget -P configurations/gado-1.0.4 https://molgenis26.gcc.rug.nl/downloads/genenetwork/v2.1/predictions_auc_bonf.txt
 
@@ -156,7 +156,6 @@ cd configurations/phen2gene-1.2.3/Phen2Gene || exit
 bash setup.sh <<< "../lib
 ../lib"
 
-echo "${CWD}"
 cd "${CWD}" || exit
 
 cp data_preparation/configs/phen2gene-config.yaml configurations/phen2gene-1.2.3/config.yaml

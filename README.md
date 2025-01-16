@@ -2,31 +2,35 @@
 
 ## Execution
 
-To execute the analysis as described in Towards a standard benchmark for phenotype-driven variant and gene prioritisation algorithm: PhEval - Phenotypic inference Evaluation framework; run the following:
+To execute the analysis as described in `Towards a standard benchmark for phenotype-driven variant and gene prioritisation algorithm: PhEval - Phenotypic inference Evaluation framework`; run the following:
 
 ```shell
 git clone https://github.com/yaseminbridges/pheval-paper.git
 
 cd pheval-paper
 
-bash run_pipeline.sh
+make all
 ```
+
+> **WARNING** Running `make all` will likely take *weeks* to complete and require about 10TB of disk space due to the size of both the initial install data and the output data size. It is _highly_ recommended
+> to consider running the different tools in parallel on an HPC. 
+
 
 This executes the following experiments:
 
 # Tool Comparison Table
 
-| **Analysis Type**               | **Corpus**               | **Tool**         | **Version**                  |
-|----------------------------------|--------------------------|------------------|------------------------------|
-| **Phenotype-only Analysis**     | 4K corpus                | Exomiser         | 14.0.2 & 2406 db release     |
-|                                  |                          | GADO             | 1.0.4                        |
-|                                  |                          | Phen2Gene        | 1.2.3                        |
-|                                  |                          | PhenoGenius      | 1.1.1                        |
-| **Phenotype + Genomic Analysis**| 4K corpus                | Exomiser         | 14.0.2 & 2406 db release     |
-|                                  |                          | LIRICAL          | 2.0.2                        |
-|                                  |                          | AI-MARRVEL       | 0.1.0                        |
-| **Phenotype + Structural Variant Analysis** | Structural variant corpus | Exomiser  | 14.0.2 & 2406 db release     |
-|                                  |                          | SvAnna           | 1.0.4                        |
+| **Analysis Type**                           | **Corpus**                | **Tool**    | **Version**              |
+|---------------------------------------------|---------------------------|-------------|--------------------------|
+| **Phenotype-only Analysis**                 | 4K corpus                 | Exomiser    | 14.0.2 & 2406 db release |
+|                                             |                           | GADO        | 1.0.4                    |
+|                                             |                           | Phen2Gene   | 1.2.3                    |
+|                                             |                           | PhenoGenius | 1.1.1                    |
+| **Phenotype + Genomic Analysis**            | 4K corpus                 | Exomiser    | 14.0.2 & 2406 db release |
+|                                             |                           | LIRICAL     | 2.0.2                    |
+|                                             |                           | AI-MARRVEL  | 0.1.0                    |
+| **Phenotype + Structural Variant Analysis** | Structural variant corpus | Exomiser    | 14.0.2 & 2406 db release |
+|                                             |                           | SvAnna      | 1.0.4                    |
 
 ## System and Storage Requirements
 
@@ -39,6 +43,9 @@ Before running the pipeline, please ensure your system meets the following requi
 
 ### CPU and Memory
 - Some tools in the pipeline require a **minimum of 4 CPU cores** and **50 GB of RAM** to run successfully.
+
+### CLI utilities
+ - The `aws` client is required to download the AI-MARVELL data dependencies. See https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html for details. 
 
 > **Note:** 
 > Due to the computational demands of these experiments, they were run on a **High-Performance Computing (HPC)** system. Where possible, we strongly recommend using an HPC environment to ensure sufficient resources for complete execution. Running this pipeline on local machines with limited resources is not advised, as it may result in insufficient storage, memory, or prolonged runtimes.

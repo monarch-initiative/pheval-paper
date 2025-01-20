@@ -17,10 +17,10 @@ install-svanna:
 	@echo "Installed $(SVANNA_NAME) in $(SVANNA_DIR)"
 
 
-# TODO FIX ImportError: cannot import name 'GetCoreSchemaHandler' from 'pydantic' (/home/hhx640/Documents/GitHub/pheval-paper/.venv/lib/python3.12/site-packages/pydantic/__init__.cpython-312-x86_64-linux-gnu.so)
 # Run SvAnna
 run-svanna: venv
 	$(PIP) install pheval.svanna
+	mkdir -p $(RESULTS_DIR)/$(SVANNA_NAME)/structural_variants
 	$(VENV_NAME)/bin/pheval run --input-dir "$(SVANNA_DIR)" \
 		--testdata-dir "$(CORPORA_DIR)/structural_variants" \
 		--output-dir "$(RESULTS_DIR)/$(SVANNA_NAME)/structural_variants" \

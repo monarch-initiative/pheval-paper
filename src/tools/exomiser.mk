@@ -15,15 +15,13 @@ install-exomiser:
 		for f in *.zip; do unzip "$$f" && rm "$$f"; done
 	cp $(EXOMISER_DIR)/2406/variants/exomiser-cli-$(EXOMISER_VERSION)/examples/preset-exome-analysis.yml $(EXOMISER_DIR)/2406/variants/.
 	sed -i 's/\[ REVEL, MVP \]/\[ REVEL, MVP, ALPHA_MISSENSE \]/g' $(EXOMISER_DIR)/2406/variants/preset-exome-analysis.yml
-	cp data_preparation/configs/exomiser-variant-config.yaml $(EXOMISER_DIR)/2406/variants/config.yaml
+	cp src/tools/configs/exomiser-variant-config.yaml $(EXOMISER_DIR)/2406/variants/config.yaml
 	mkdir -p $(EXOMISER_DIR)/2406/phenotype
 	cp -r $(EXOMISER_DIR)/2406/variants/exomiser-cli-$(EXOMISER_VERSION) $(EXOMISER_DIR)/2406/phenotype/
 	cd $(EXOMISER_DIR)/2406/phenotype && \
 		ln -s ../variants/2406_phenotype . && \
 		ln -s ../variants/2406_hg19 . && \
 		ln -s ../variants/2406_hg38 .
-# TODO: this should be a different preset for the phenotype only?
-	cp $(EXOMISER_DIR)/2406/variants/preset-exome-analysis.yml $(EXOMISER_DIR)/2406/phenotype/.
 	cp src/tools/configs/exomiser-phenotype-config.yaml $(EXOMISER_DIR)/2406/phenotype/config.yaml
 	@echo "Installed $(EXOMISER_NAME) in $(EXOMISER_DIR)"
 
@@ -48,4 +46,3 @@ run-exomiser: venv
 		--testdata-dir "$(CORPORA_DIR)/structural_variants" \
 		--output-dir "$(RESULTS_DIR)/$(EXOMISER_NAME)-2406/structural_variants" \
 		--runner exomiserphevalrunner --version $(EXOMISER_VERSION)
-#	$(PIP) uninstall -y pheval.exomiser

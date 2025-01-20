@@ -1,0 +1,9 @@
+tool: svanna
+tool_version: 1.0.4
+variant_analysis: True
+gene_analysis: False
+disease_analysis: False
+tool_specific_configuration_options:
+  svanna_jar_executable: svanna-cli-1.0.4/svanna-cli-1.0.4.jar
+  post_process:
+    sort_order: descending

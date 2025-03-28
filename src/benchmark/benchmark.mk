@@ -7,7 +7,7 @@ PHEVAL_UTILS = $(VENV_BASE)/$(VENV_NAME)/bin/pheval-utils
 ## Install pheval and dependencies in a virtual environment
 install-pheval: VENV_NAME=pheval
 install-pheval: venv 
-	$(PIP) install pheval
+	$(PIP) install pheval==0.4.7
 
 setup-benchmarks: install-pheval
 	mkdir -p $(BENCHMARK_DIR)

@@ -28,7 +28,7 @@ install-exomiser:
 # Run Exomiser - this could be split into three separate targets to run in parallel on an HPC
 run-exomiser: VENV_NAME=exomiser
 run-exomiser: venv
-	$(PIP) install pheval.exomiser
+	$(PIP) install pheval.exomiser==0.2.7
 	# analyse variants corpus
 	mkdir -p $(RESULTS_DIR)/$(EXOMISER_NAME)-2406/phenopacket_store_0.1.11_variants
 	$(VENV_BASE)/$(VENV_NAME)/bin/pheval run --input-dir "$(EXOMISER_DIR)/2406/variants" \

@@ -10,7 +10,7 @@ download-pheval-paper-corpora:
 # Install corpora
 install-pheval-paper-corpora: VENV_NAME=pheval
 install-pheval-paper-corpora: venv
-	$(PIP) install pheval
+	$(PIP) install pheval==0.4.7
 	$(VENV_BASE)/$(VENV_NAME)/bin/pheval-utils prepare-corpus \
 		--phenopacket-dir "$(CORPORA_DIR)/phenopacket_store_0.1.11_variants/phenopackets" \
 		--hg19-template-vcf "$(CORPORA_DIR)/HG001_GRCh37_1_22_v4.2.1_benchmark.vcf.gz" \

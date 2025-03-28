@@ -20,7 +20,7 @@ install-svanna:
 # Run SvAnna
 run-svanna: VENV_NAME=svanna
 run-svanna: venv
-	$(PIP) install pheval.svanna
+	$(PIP) install pheval.svanna==0.1.2
 	mkdir -p $(RESULTS_DIR)/$(SVANNA_NAME)/structural_variants
 	$(VENV_BASE)/$(VENV_NAME)/bin/pheval run --input-dir "$(SVANNA_DIR)" \
 		--testdata-dir "$(CORPORA_DIR)/structural_variants" \

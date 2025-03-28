@@ -16,7 +16,7 @@ install-phen2gene:
 # Run Phen2Gene
 run-phen2gene: VENV_NAME=phen2gene
 run-phen2gene: venv
-	$(PIP) install pheval.phen2gene
+	$(PIP) install pheval.phen2gene==0.1.4
 	mkdir -p $(RESULTS_DIR)/$(PHEN2GENE_NAME)/phenopacket_store_0.1.11_phenotypes
 	$(VENV_BASE)/$(VENV_NAME)/bin/pheval run --input-dir "$(PHEN2GENE_DIR)" \
 		--testdata-dir "$(CORPORA_DIR)/phenopacket_store_0.1.11_phenotypes" \

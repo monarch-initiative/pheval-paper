@@ -18,7 +18,7 @@ install-ai-marrvel: venv
 # Run AI-MARRVEL
 run-ai-marrvel: VENV_NAME=aim
 run-ai-marrvel: venv
-	$(PIP) install pheval.ai_marrvel
+	$(PIP) install pheval.ai_marrvel==0.1.9
 	$(VENV_BASE)/bin/pheval run --input-dir "$(AIM_DIR)" \
 		--testdata-dir "$(CORPORA_DIR)/phenopacket_store_0.1.11_variants" \
 		--output-dir "$(RESULTS_DIR)/$(AIM_NAME)/phenopacket_store_0.1.11_variants" \

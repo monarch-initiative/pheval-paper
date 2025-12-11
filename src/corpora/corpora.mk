@@ -1,6 +1,7 @@
 
 # Download the pheval paper corpora
 download-pheval-paper-corpora:
+	mkdir -p $(CORPORA_DIR)
 	wget https://zenodo.org/records/14679713/files/pheval-paper-corpora.tar.gz -P $(TARGET)
 	tar -zxf $(TARGET)/pheval-paper-corpora.tar.gz -C $(TARGET)
 	wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/latest/GRCh37/HG001_GRCh37_1_22_v4.2.1_benchmark.vcf.gz  -P $(CORPORA_DIR)

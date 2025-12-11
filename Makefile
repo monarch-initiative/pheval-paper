@@ -62,5 +62,6 @@ run-paper-benchmarks: install-paper-results	benchmark
 # Download and results of the analyses run for the PheVal paper and then run the benchmark target to produce Figure 3.
 # This will download a 5.3 GB archive which will expand to ~35 GB
 install-paper-results:
+	mkdir -p $(RESULTS_DIR)
 	wget https://zenodo.org/records/14679713/files/pheval-paper-results.tar.gz -P $(TARGET)
 	tar -zxf $(TARGET)/pheval-paper-results.tar.gz --strip-components=1 -C $(RESULTS_DIR)

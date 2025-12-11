@@ -57,7 +57,7 @@ benchmark: run-phenotype-only-benchmarks run-variant-benchmarks run-structural-v
 
 # Downloads the results of the 'install-tools' and 'run' targets from Zenodo, unpacks them and then runs the 'benchmark'
 # target to produce Figure 3. of the paper
-run-paper-benchmarks: install-paper-results	benchmark
+run-paper-benchmarks: download-pheval-paper-corpora install-paper-results benchmark
 
 # Download and results of the analyses run for the PheVal paper and then run the benchmark target to produce Figure 3.
 # This will download a 5.3 GB archive which will expand to ~35 GB
